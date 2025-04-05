@@ -1,0 +1,309 @@
+/* General Reset */
+body, h1, h2, h3, p, a {
+  margin: 0;
+  padding: 0;
+  font-family: 'Intel Clear', Arial, sans-serif; /* Use Intel-inspired fonts */
+  color: #333;
+}
+
+/* Body Styling */
+body {
+  background-color: #eef7fc; /* Light blue background for a clean look */
+  line-height: 1.6;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Section */
+header {
+  background: linear-gradient(90deg, #005b99, #0071c5); /* Initial gradient */
+  background-size: 200% 200%; /* Expand background for animation */
+  animation: gradient-animation 5s infinite alternate; /* Apply animation */
+  color: white;
+  text-align: center;
+  padding: 36px 18px; /* Increase padding by 20% for a larger header */
+  font-size: 1.2em; /* Slightly increase font size for proportional scaling */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  font-family: 'Intel Clear', Arial, sans-serif; /* Ensure header uses Intel-inspired font */
+}
+
+/* Define the gradient animation */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; /* Start position */
+  }
+  100% {
+    background-position: 100% 50%; /* End position */
+  }
+}
+
+header img {
+  max-width: 150px;
+  margin-bottom: 15px; /* Add more space below the logo */
+}
+
+header h1 {
+  font-size: 3rem; /* Increase font size by 20% for emphasis */
+  margin-bottom: 15px;
+}
+
+header p {
+  font-size: 1.44rem; /* Increase font size by 20% for readability */
+  margin-bottom: 15px;
+}
+
+/* Timeline Section */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Intel Clear', Arial, sans-serif; /* Ensure section uses Intel-inspired font */
+}
+
+section div {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 15px;
+  width: 300px;
+  text-align: center;
+}
+
+section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+section h2 {
+  color: #0071c5;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-align: center; /* Center-align all h3 texts */
+  word-wrap: break-word; /* Break long words to fit within the card */
+  overflow-wrap: break-word; /* Ensure text wraps properly */
+  margin: 0 auto; /* Center the text block */
+  max-width: 100%; /* Ensure the text stays within the card's width */
+}
+
+section p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Scrollable Box Styling */
+.scroll-box {
+  background-color: #0071c5; /* Set background color to Intel Blue */
+  border: 1px solid #ddd; /* Light border for separation */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 30px auto; /* Add more margin for spacing */
+  padding: 20px; /* Increase padding for better readability */
+  width: 100%;
+  max-width: 1000px;
+  height: 400px; /* Increase height to accommodate larger cards */
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-box ul {
+  display: flex;
+  gap: 30px; /* Add more space between list items */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content: space-between; /* Ensure even spacing between cards */
+}
+
+.scroll-box li {
+  scroll-snap-align: center;
+  background-color: #f9f9f9; /* Light gray background for cards */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px; /* Increase padding for better spacing */
+  width: 22%; /* Adjust width so four cards fit side by side */
+  flex-shrink: 0; /* Prevent cards from shrinking */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.scroll-box li:hover {
+  transform: scale(1.1); /* Slightly larger scale on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  background-color: #e6f2fa; /* Light blue background on hover */
+}
+
+.scroll-box img {
+  max-width: 1000%; /* Ensure images fit within the container */
+  height: auto; /* Restore original height to maintain aspect ratio */
+  /* Ensure the entire image is visible */
+  border-radius: 8px; /* Rounded corners for images */
+  margin-bottom: 15px;
+  transition: opacity 0.3s ease; /* Smooth fade-out effect */
+}
+
+.scroll-box img:hover {
+  opacity: 1; /* Remove the opacity effect */
+}
+
+.scroll-box p.description {
+  display: none; /* Hide the description by default */
+  position: absolute; /* Position absolute for layering */
+  top: 0; /* Align the description to the top of the card */
+  left: 0;
+  right: 0;
+  bottom: 0; /* Stretch the description to cover the entire card */
+  background-color: rgba(0, 113, 197, 0.9); /* Semi-transparent Intel Blue */
+  color: #ffffff; /* White text for contrast */
+  border-radius: 10px; /* Match the card's rounded corners */
+  padding: 20px; /* Add padding for better readability */
+  font-size: 1rem; /* Slightly larger font size */
+  text-align: left; /* Align text to the left for readability */
+  line-height: 1.5; /* Add spacing between lines for readability */
+  word-wrap: break-word; /* Ensure long words break to the next line */
+  white-space: normal; /* Allow text to wrap to the next line */
+  overflow: hidden; /* Ensure content stays within the card */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  z-index: 2; /* Ensure the text is in front of the image */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth fade-in effect */
+}
+
+.scroll-box li:hover p.description {
+  display: block; /* Show the description when hovering over the image */
+  opacity: 1; /* Fade in the description */
+}
+
+/* Card Styling */
+.card {
+  background-color: #f9f9f9; /* Light gray background for cards */
+  border: 1px solid #ddd; /* Light border for separation */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Add padding for spacing */
+  width: 1000px; /* Fixed width for consistency */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center; /* Center-align content */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.card img {
+  max-width: 100%; /* Ensure images fit within the card */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners for images */
+  margin-bottom: 15px; /* Add space below the image */
+}
+
+.card h3 {
+  font-size: 1.0rem; /* Slightly larger font size for headings */
+  color: #0071c5; /* Intel Blue for headings */
+  margin-bottom: 10px; /* Add space below the heading */
+}
+
+.card p.description {
+  font-size: 0.9rem; /* Smaller font size for descriptions */
+  color: #555; /* Subtle text color */
+}
+
+/* Footer Section */
+footer {
+  background-color: #0071c5; /* Intel Blue */
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 30px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow above the footer */
+  font-family: 'Intel Clear', Arial, sans-serif; /* Ensure footer uses Intel-inspired font */
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header {
+    padding: 24px 12px; /* Reduce padding for smaller screens */
+    font-size: 1em; /* Adjust font size */
+  }
+
+  header h1 {
+    font-size: 2rem; /* Reduce heading size */
+  }
+
+  header p {
+    font-size: 1rem; /* Adjust paragraph size */
+  }
+
+  .scroll-box {
+    height: auto; /* Allow height to adjust dynamically */
+    max-height: 600px; /* Set a maximum height for vertical scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    white-space: normal; /* Allow content to wrap for vertical layout */
+  }
+
+  .scroll-box ul {
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Add space between items */
+  }
+
+  .scroll-box li {
+    width: 100%; /* Make cards full width */
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  footer {
+    padding: 10px 0; /* Reduce footer padding */
+    font-size: 0.8rem; /* Adjust font size */
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem; /* Further reduce heading size */
+  }
+
+  header p {
+    font-size: 0.9rem; /* Further adjust paragraph size */
+  }
+
+  .scroll-box li {
+    width: 100%; /* Make cards full width */
+    padding: 10px; /* Further reduce padding */
+  }
+
+  footer {
+    font-size: 0.7rem; /* Further adjust footer font size */
+  }
+}
