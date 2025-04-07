@@ -16,6 +16,36 @@ body {
   padding: 0;
 }
 
+/* Add support for RTL languages */
+body[dir="rtl"] {
+  direction: rtl;
+  text-align: right; /* Align text to the right for RTL */
+}
+
+header[dir="rtl"] {
+  text-align: right; /* Align header text to the right */
+}
+
+section[dir="rtl"] h3, 
+section[dir="rtl"] p, 
+.scroll-box[dir="rtl"] li, 
+.card[dir="rtl"] {
+  text-align: right; /* Align section and card content to the right */
+}
+
+.scroll-box[dir="rtl"] ul {
+  flex-direction: row-reverse; /* Reverse the order of items in RTL */
+}
+
+footer[dir="rtl"] {
+  text-align: right; /* Align footer text to the right */
+}
+
+/* Ensure hover effects and animations remain consistent */
+body[dir="rtl"] .scroll-box li:hover p.description {
+  text-align: right; /* Align description text to the right */
+}
+
 /* Header Section */
 header {
   background: linear-gradient(90deg, #005b99, #0071c5); /* Initial gradient */
